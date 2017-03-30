@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: docker-demo
+  annotations:
+    description: "My first app in openshift" 
+    tags: "demo,demo-openshift" 
+objects:   
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    name: docker-demo
+  spec:
+    containers:
+      image: jvoice/docker-demo
+      name: docker-demo
+      ports:
+      - containerPort: 6379
+        protocol: TCP
+labels:      
+  name: demo

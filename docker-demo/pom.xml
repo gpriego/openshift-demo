@@ -50,7 +50,7 @@
 				<configuration>
 					<images>
 						<image>
-							<name>devstack-platform/${project.artifactId}:${project.version}</name>
+							<name>${project.artifactId}:${project.version}</name>
 							<alias>${project.artifactId}</alias>
 							<build>
 								<from>openjdk:8</from>
@@ -75,11 +75,7 @@
 									<prefix>${project.artifactId}</prefix>
 								</log>
 								<memory>524288000</memory>
-<!-- 								<entrypoint> -->
-<!-- 									<shell>java -jar /maven/${project.artifactId}-${project.version}</shell> -->
-<!-- 								</entrypoint> -->
 							</run>
-							<!-- <registry>registry.lvtc.gsnet.corp</registry> -->
 						</image>
 					</images>
 				</configuration>
