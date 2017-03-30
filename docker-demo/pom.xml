@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.vectorsf</groupId>
+	<artifactId>docker-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>docker-demo</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.jolokia</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.13.8</version>
+				<configuration>
+					<images>
+						<image>
+							<name>devstack-platform/${project.artifactId}:${project.version}</name>
+							<alias>${project.artifactId}</alias>
+							<build>
+								<from>openjdk:8</from>
+								<tags>
+									<tag>latest</tag>
+									<tag>${project.version}</tag>
+								</tags>
+								<assembly>
+									<!-- <dockerFileDir>.</dockerFileDir> -->
+									<descriptorRef>artifact</descriptorRef>
+								</assembly>
+								<entryPoint>
+									<shell>java -jar /maven/${project.artifactId}-${project.version}.jar</shell>
+								</entryPoint>
+							</build>
+							<run>
+								<namingStrategy>alias</namingStrategy>
+								<ports>
+									<port>8080:8080</port>
+								</ports>
+								<log>
+									<prefix>${project.artifactId}</prefix>
+								</log>
+								<memory>524288000</memory>
+<!-- 								<entrypoint> -->
+<!-- 									<shell>java -jar /maven/${project.artifactId}-${project.version}</shell> -->
+<!-- 								</entrypoint> -->
+							</run>
+							<!-- <registry>registry.lvtc.gsnet.corp</registry> -->
+						</image>
+					</images>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
