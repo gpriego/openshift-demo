@@ -22,6 +22,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		
+<!-- 		<docker.host>tcp://192.168.99.100:2376</docker.host> -->
+<!--         <docker.registry>registry.preview.openshift.com</docker.registry> -->
 	</properties>
 
 	<dependencies>
@@ -43,7 +46,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.jolokia</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.13.8</version>
@@ -59,7 +62,7 @@
 									<tag>${project.version}</tag>
 								</tags>
 								<assembly>
-									<!-- <dockerFileDir>.</dockerFileDir> -->
+									<dockerFileDir>.</dockerFileDir>
 									<descriptorRef>artifact</descriptorRef>
 								</assembly>
 								<entryPoint>
@@ -79,7 +82,7 @@
 						</image>
 					</images>
 				</configuration>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 
