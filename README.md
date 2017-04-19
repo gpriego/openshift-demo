@@ -27,9 +27,9 @@ The token is composed by two fields, Header and Payload.
 #### Header
 |Field|Description|
 |----|--------|
-|alg|Fixed to RD256
-|typ|Fixed to JWT
-|kid| <fild iss of payload>_<field alg of head>
+|alg|Fixed to RD256|
+|typ|Fixed to JWT|
+|kid|<fild iss of payload>_<field alg of head>|
 
 #### Payload
 |Field|Description|
