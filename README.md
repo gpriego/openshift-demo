@@ -29,18 +29,18 @@ The token is composed by two fields, Header and Payload.
 |----|--------|
 |alg|Fixed to RD256|
 |typ|Fixed to JWT|
-|kid|<fild iss of payload>_<field alg of head>|
+|kid|``<fild iss of payload>_<field alg of head>``|
 
 #### Payload
 |Field|Description|
 |----|--------|
-|iss|Token generator
-|sub|Logged user
-|aud|Audience allowed in the service (must be the service name)
-|nbf|Time when the token starts to be valid
-|exp|Life of the token in seconds
-|iat|Time of token generation
-|jti|Id of the generated token
+|iss|Token generator|
+|sub|Logged user|
+|aud|Audience allowed in the service (must be the service name)|
+|nbf|Time when the token starts to be valid|
+|exp|Life of the token in seconds|
+|iat|Time of token generation|
+|jti|Id of the generated token|
 
 Finally, to build the token you must follow next steps:
 1.- Generate a private and a public key in Base64 format. Using Eclipse or OpenSSL, for instance.
