@@ -52,7 +52,9 @@ Finally, to build the token you must follow next steps:
 1.- Generate a private and a public key in Base64 format. Using Eclipse or OpenSSL, for instance.
 2.- Build the token with the structure described before.
 3.- Sign the header and the payload of the token. Each of both in is sign.
-4.- Join header and payload signs by a dot.
+4.- Join header and payload signs by a dot. 
+
+For steps 2, 3 and 4 you can use the following webapp [jwt-generation](https://jwt.io/)
 
 #### Skeleton Config
 This is an example of configuration file for jwt.
