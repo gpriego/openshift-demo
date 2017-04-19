@@ -1,0 +1,16 @@
+# Spring-Cloud-Config Properties 
+spring:
+    application:
+        name : Skeleton                                # aplication name
+    cloud:
+        config:
+            uri: http://localhost:9080     # config-server url
+            #uri: http://180.101.208.105:8080     # config-server url
+            profile: dev                          # environment
+            label: master      
+            failFast: true                        
+            retry:                                # connection retrials configuration
+                initialInterval: 1000             # first timeout
+                multiplier: 1.5                   # factor for subsequence trials (1st trial = initialInterval, 2nd trial = 1st trial * multiplier, ...)
+                maxAttemps: 6                     # number of trials
+                maxInterval: 5000                 # maximal timeout
