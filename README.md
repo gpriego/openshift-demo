@@ -14,9 +14,15 @@ Skeleton uses the JWT Security artifacts of serenity. This enable security feaat
 
 Consumig the services requires to send a token in the request header. This is an call example.
 
->GET /hello HTTP/1.1
+```
+GET /hello HTTP/1.1
 Host: localhost:8080
-Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkFwcENsaWVudF9SUzI1NiJ9.eyJpc3MiOiJBcHBDbGllbnQiLCJzdWIiOiJ1aWQ6bjExMTExMSIsImF1ZCI6IlNrZWxldG9uQVVEIiwibmJmIjoxNDMyMTE5MzYyLCJleHAiOjE1MjQxMjc5MTQsImlhdCI6MTQzMjExOTM2MiwianRpIjoiQjQ2NTc4QzIwRDlGN0UwMDA4NzBGNkEyIn0.P_tmHBpD6IvZznO8UIMjJRougim12Jkj0UqwyEFddvieK2YqwOrRicI2LLYYjdtpPxcCdss7NZkV_1nQTNj8ZiFXV9CjClzlD8Bk9zM2pdebDTiaSzyu9nxi8KfqtNAoNWab1uuGf3MKIFMqcXbZkaad86jDFDmZpoREeY_fbRQ
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkFwcENsaWVudF9SUzI1NiJ9.
+					  eyJpc3MiOiJBcHBDbGllbnQiLCJzdWIiOiJ1aWQ6bjExMTExMSIsImF1ZCI6IlNrZWxldG9uQVVEIiwibmJmIjoxND
+					  MyMTE5MzYyLCJleHAiOjE1MjQxMjc5MTQsImlhdCI6MTQzMjExOTM2MiwianRpIjoiQjQ2NTc4QzIwRDlGN0UwMDA4
+					  NzBGNkEyIn0.P_tmHBpD6IvZznO8UIMjJRougim12Jkj0UqwyEFddvieK2YqwOrRicI2LLYYjdtpPxcCdss7NZkV_1nQ
+					  TNj8ZiFXV9CjClzlD8Bk9zM2pdebDTiaSzyu9nxi8KfqtNAoNWab1uuGf3MKIFMqcXbZkaad86jDFDmZpoREeY_fbRQ
+```
 
 As you can seem the token is send in the Authorization Header, putting before the key work "Bearer".
 
