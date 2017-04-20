@@ -83,6 +83,7 @@ To integrate the service with the Key Management Service of serenity (recommende
 keytool -genkey -keyalg RSA -alias <new_alias> -keystore keystore.jks -storepass <new_keystore_password> -validity <expiring_days> -keysize 2048
 
 ```
+Remember to store private and public keys, used to build the authorization token.
 2.- Configure  the service following the [security services doc](https://gitlab.alm.gsnetcloud.corp/serenity-security-services/security-srv-keymanager).
 3.- Configure Skeleton pointing to the Key Management Service. For instance:
 ```
@@ -94,7 +95,7 @@ serenity.security:
 
 KeyProvider will be used just to get public key giving and alias. Remember that alias will be in the passed token.
 
-## Docker
+## Docke
 
 Skeleton is prepared to build docker image. This is done by the org.jolokia.docker-maven-plugin. 
 Only it is necesary to run the following maven sentence.
