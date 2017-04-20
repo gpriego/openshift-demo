@@ -95,7 +95,7 @@ serenity.security:
 
 KeyProvider will be used just to get public key giving and alias. Remember that alias will be in the passed token.
 
-## Docke
+## Docker
 
 Skeleton is prepared to build docker image. This is done by the org.jolokia.docker-maven-plugin. 
 Only it is necesary to run the following maven sentence.
