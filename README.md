@@ -24,7 +24,7 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkFwcENsaWVudF
 			TNj8ZiFXV9CjClzlD8Bk9zM2pdebDTiaSzyu9nxi8KfqtNAoNWab1uuGf3MKIFMqcXbZkaad86jDFDmZpoREeY_fbRQ
 ```
 
-As you can seem the token is send in the Authorization Header, putting before the key work "Bearer".
+As you can see the token is send in the Authorization Header before the key word "Bearer".
 
 ### Building the token
 
