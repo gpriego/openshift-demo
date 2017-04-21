@@ -33,14 +33,14 @@ The token is composed by two fields, Header and Payload.
 #### Header
 |Field|Description|
 |----|--------|
-|alg|Fixed to RD256|
+|alg|Fixed to RS256|
 |typ|Fixed to JWT|
 |kid|``<fild iss of payload>_<field alg of head>``|
 
 #### Payload
 |Field|Description|
 |----|--------|
-|iss|Token generator|
+|iss|Token generator (optional)|
 |sub|Logged user|
 |aud|Audience allowed in the service (must be the service name)|
 |nbf|Time when the token starts to be valid|
@@ -90,7 +90,7 @@ Remember to store private and public keys, used to build the authorization token
 serenity.security:
    audience: SkeletonAUD
    keyprovider: 
-      keyServerURL: http://localhost:10080/
+      keyServerURL: http://localhost:10080/v1/publicKey/
 ```
 
 KeyProvider will be used just to get public key giving and alias. Remember that alias will be in the passed token.
